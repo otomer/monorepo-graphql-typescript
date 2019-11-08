@@ -1,0 +1,57 @@
+{
+  "author": "Tomer Ovadia <o.tomerr@gmail.com>",
+  "dependencies": {
+    "@otomer/lib-agify": "^1.0.0",
+    "@types/express": "^4.16.0",
+    "apollo-codegen": "^0.20.2",
+    "apollo-server": "^2.9.7",
+    "apollo-server-express": "^2.9.7",
+    "chalk": "^2.4.2",
+    "console-stamp": "^0.2.9",
+    "express": "^4.16.3",
+    "graphql": "^14.5.8",
+    "ts-node-dev": "^1.0.0-pre.30"
+  },
+  "description": "My Service",
+  "devDependencies": {
+    "@types/console-stamp": "^0.2.32"
+  },
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "homepage": "",
+  "keywords": [
+    "node",
+    "graphql",
+    "service",
+    "apollo"
+  ],
+  "license": "ISC",
+  "main": "dist/server.js",
+  "name": "@otomer/srv-myservice",
+  "references": [
+    {
+      "path": "../packages/libs/agify"
+    }
+  ],
+  "scripts": {
+    "build": "yarn clean && yarn compile",
+    "clean": "rm -rf ./dist && rm -rf tsconfig.tsbuildinfo",
+    "clean:all": "yarn clean && rm -rf ./node_modules",
+    "compile": "tsc -b tsconfig.json",
+    "compile-serve": "tsc && yarn serve-node",
+    "gql:introspect-schema": "apollo-codegen introspect-schema http://localhost:4000/graphql --output schema.json",
+    "gql:upload-schema": "npx apollo service:push --endpoint=http://localhost:4000/graphql --tag=development",
+    "qgl:generate-types:": "generate **/*.ts --schema schema.json --target typescript --output operation-result-types.ts",
+    "serve-node": "node dist/server.js",
+    "start": "nodemon --watch src/ --exec \"yarn run compile-serve\" --verbose -e ts",
+    "watch": "yarn watch-node && yarn watch-ts",
+    "watch-node": "nodemon dist/server.js",
+    "watch-ts": "tsc -w"
+  },
+  "types": "dist/server.d.ts",
+  "version": "1.0.0"
+}

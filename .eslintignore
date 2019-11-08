@@ -1,0 +1,4 @@
+/packages/**/src/**/*.d.ts
+/packages/**/src/**/__tests__/**
+/packages/**/node_modules/**/*.js
+node_modules/*
