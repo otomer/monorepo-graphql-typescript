@@ -15,13 +15,13 @@
 
 ## Technologies in use
 
-- NodeJS - Server
+- [NodeJS](https://nodejs.org/) - Server
 - [Apollo GraphQL Server](https://www.apollographql.com/)
 - [Apollo Graph Manager](https://engine.apollographql.com/)
-- Jest - Unit Testing
-- TypeScript - Dev Language
-- Lerna - Monorepo management
-- Yarn - Npm runner
+- [Jest](https://jestjs.io/) - Unit Testing
+- [TypeScript](https://www.typescriptlang.org/) - Dev Language
+- [Lerna](https://github.com/lerna/lerna) - Monorepo management
+- [Yarn](https://yarnpkg.com/) - Npm runner
 
 
 ## Getting Started
@@ -105,8 +105,7 @@ To run all eligible tests across all packages in the monorepo:
 
 Tools being used:
 - [Prettier](https://github.com/prettier/prettier) - Opinionated Code Formatter.
-- [ESlint](https://github.com/eslint/eslint) - Static code analysis tool for identifying
-and reporting problematic patterns found in JavaScript code.
+- [ESlint](https://github.com/eslint/eslint) - Static code analysis tool for identifying and reporting problematic patterns found in JavaScript code.
   
 All tools are configured in project level and takes part during development,
 commit, open Pull Requests and in our CI/CD flow.
@@ -114,7 +113,10 @@ commit, open Pull Requests and in our CI/CD flow.
 1. Run Lint: `yarn lint`
 2. Run Prettier: `yarn prettier`
 
-    To run prettier on auto-save in WebStorm go to `.idea.watcherTasks.xml` file and enable it.  [eslint](https://github.com/eslint/eslint) - Static code analysis tool for identifying and reporting problematic patterns found in JavaScript code.
+To integrate Prettier in your editor, download this plugin: [for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+) / [for WebStorm](https://plugins.jetbrains.com/plugin/10456-prettier)
+
+For WebStorm: To run prettier on auto-save - Go to `.idea/watcherTasks.xml` file and enable it. 
 
 *** 
 
